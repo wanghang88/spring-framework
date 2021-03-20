@@ -552,12 +552,15 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			StartupStep contextRefresh = this.applicationStartup.start("spring.context.refresh");
 
 			// Prepare this context for refreshing.
+			//实例话环境
 			prepareRefresh();
 
 			// Tell the subclass to refresh the internal bean factory.
+			//返回一个beanFactory 对bean进行实例话
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
+			//准备beanFactory
 			prepareBeanFactory(beanFactory);
 
 			try {

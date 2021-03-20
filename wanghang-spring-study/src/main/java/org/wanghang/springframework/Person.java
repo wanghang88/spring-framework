@@ -3,13 +3,23 @@ package org.wanghang.springframework;
 public class Person {
 
 	private String name;
-
 	private Integer age;
 
-	Person(String name,Integer age){
+	public Person(){
+	}
+
+	public Person(String name,Integer age){
 		this.name=name;
 		this.age=age;
 	}
+
+
+	public void work(){
+		System.out.println("Person 类示例启动了,可以开始工作了");
+	}
+
+
+
 
 
 	public void setName(String name){
@@ -26,9 +36,6 @@ public class Person {
 		return this.age;
 	}
 
-	public static void main(String[] args) {
-		Person person=new Person("wanghang",36);
-		System.out.println("name:"+person.getName());
-	}
+
 
 }
