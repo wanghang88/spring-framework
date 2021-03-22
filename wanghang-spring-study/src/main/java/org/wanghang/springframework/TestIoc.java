@@ -52,6 +52,8 @@ import org.wanghang.springframework.manualioc.Student;
  *
  *
  *c)springBean的生命周期：
+ * 参考这个图
+ * https://blog.csdn.net/weixin_42762133/article/details/98459194
  *
  *
  *
