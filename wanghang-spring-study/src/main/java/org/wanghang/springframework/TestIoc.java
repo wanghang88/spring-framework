@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.Scope;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.StopWatch;
 import org.wanghang.springframework.manualioc.Student;
 
 
@@ -56,18 +57,24 @@ import org.wanghang.springframework.manualioc.Student;
  * https://blog.csdn.net/weixin_42762133/article/details/98459194
  *
  *
+ * d)关于spring的aop，两种代理的代码实现：
+ * https://blog.csdn.net/weixin_42762133/article/details/104908894
+ *
+ *
  *
  */
 public class TestIoc {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		TestIoc ioc=new TestIoc();
 
 	//	ioc.annotationConfigIOc();
 
 	//	ioc.classPathXml();
 
-		ioc.userLoadToSpringIoc();
+	//	ioc.userLoadToSpringIoc();
+
+		ioc.testStopWatch();
 	}
 
 
@@ -107,4 +114,25 @@ public class TestIoc {
 
 		System.out.println("student:"+student);
 	}
+
+
+	//测试StopWatch
+	private void testStopWatch() throws InterruptedException {
+		StopWatch stopWatch=new StopWatch();
+		stopWatch.start();
+
+		Thread.sleep(1000);
+
+		stopWatch.stop();
+
+		System.out.println("程序执行的时间:"+stopWatch.getTotalTimeMillis());
+		System.out.println("程序执行的时间:"+stopWatch.prettyPrint());
+	}
+
+
+
+
+
+
+
 }
