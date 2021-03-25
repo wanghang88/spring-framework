@@ -63,6 +63,7 @@ import org.wanghang.springframework.manualioc.Student;
  *
  * e)关于使用spring的Aop实现事务的参考
  * https://yuanyu.blog.csdn.net/article/details/89792082
+ * https://blog.csdn.net/qq_40794973/category_9705153.html <spring事务>
  *
  *
  * f)关于使用springMvc的参考：
