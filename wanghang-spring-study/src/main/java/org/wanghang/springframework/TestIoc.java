@@ -65,6 +65,10 @@ import org.wanghang.springframework.manualioc.Student;
  * https://yuanyu.blog.csdn.net/article/details/89792082
  *
  *
+ * f)关于使用springMvc的参考：
+ * https://blog.csdn.net/qq_40794973/category_8920225.html
+ *
+ *
  *
  */
 public class TestIoc {
