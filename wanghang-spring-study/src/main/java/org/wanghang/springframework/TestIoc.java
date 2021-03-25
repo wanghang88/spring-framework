@@ -61,6 +61,10 @@ import org.wanghang.springframework.manualioc.Student;
  * https://blog.csdn.net/weixin_42762133/article/details/104908894
  *
  *
+ * e)关于使用spring的Aop实现事务的参考
+ * https://yuanyu.blog.csdn.net/article/details/89792082
+ *
+ *
  *
  */
 public class TestIoc {
