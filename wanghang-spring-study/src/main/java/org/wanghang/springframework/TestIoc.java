@@ -137,11 +137,4 @@ public class TestIoc {
 		System.out.println("程序执行的时间:"+stopWatch.getTotalTimeMillis());
 		System.out.println("程序执行的时间:"+stopWatch.prettyPrint());
 	}
-
-
-
-
-
-
-
 }
