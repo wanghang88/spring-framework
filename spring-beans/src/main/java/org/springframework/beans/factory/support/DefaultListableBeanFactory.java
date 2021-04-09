@@ -941,12 +941,14 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 					}
 				}
 				else {
+					// 对于普通的 Bean，只要调用 getBean(beanName) 这个方法就可以进行初始化了，也是doGetBean()方法的入口:
 					getBean(beanName);
 				}
 			}
 		}
 
 		// Trigger post-initialization callback for all applicable beans...
+		//Bean实例完成之后，初始化逻辑：
 		for (String beanName : beanNames) {
 			Object singletonInstance = getSingleton(beanName);
 			if (singletonInstance instanceof SmartInitializingSingleton) {

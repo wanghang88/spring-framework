@@ -38,6 +38,12 @@ import org.wanghang.springframework.manualioc.Student;
  *
  *
  *
+ *
+ *
+ *
+ *
+ *
+ *
  *c)spring容器初始化之Aware接口：aware接口的处理在spring ioc容器初始化完成之后，也就是bean转成了BeanDefinition,并注册进了ioc容器中(beanDefinitionMap)
  *                    使用场景：TODO
  *                           1)获取bean在容器中初始化之后的对象；

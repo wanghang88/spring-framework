@@ -246,8 +246,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 	 */
 	@SuppressWarnings("unchecked")
 	protected <T> T doGetBean(
-			String name, @Nullable Class<T> requiredType, @Nullable Object[] args, boolean typeCheckOnly)
-			throws BeansException {
+			String name, @Nullable Class<T> requiredType, @Nullable Object[] args, boolean typeCheckOnly)throws BeansException {
 
 		String beanName = transformedBeanName(name);
 		Object bean;
@@ -301,8 +300,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 			}
 
 			try {
-				StartupStep beanCreation = this.applicationStartup.start("spring.beans.instantiate")
-						.tag("beanName", name);
+				StartupStep beanCreation = this.applicationStartup.start("spring.beans.instantiate").tag("beanName", name);
 				if (requiredType != null) {
 					beanCreation.tag("beanType", requiredType::toString);
 				}
@@ -320,8 +318,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 						registerDependentBean(dep, beanName);
 						try {
 							getBean(dep);
-						}
-						catch (NoSuchBeanDefinitionException ex) {
+						}catch (NoSuchBeanDefinitionException ex) {
 							throw new BeanCreationException(mbd.getResourceDescription(), beanName,
 									"'" + beanName + "' depends on missing bean '" + dep + "'", ex);
 						}
@@ -332,9 +329,9 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 				if (mbd.isSingleton()) {
 					sharedInstance = getSingleton(beanName, () -> {
 						try {
+							// 执行创建 Bean：
 							return createBean(beanName, mbd, args);
-						}
-						catch (BeansException ex) {
+						}catch (BeansException ex) {
 							// Explicitly remove instance from singleton cache: It might have been put there
 							// eagerly by the creation process, to allow for circular reference resolution.
 							// Also remove any beans that received a temporary reference to the bean.
@@ -343,9 +340,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 						}
 					});
 					bean = getObjectForBeanInstance(sharedInstance, name, beanName, mbd);
-				}
-
-				else if (mbd.isPrototype()) {
+				}else if (mbd.isPrototype()){
 					// It's a prototype -> create a new instance.
 					Object prototypeInstance = null;
 					try {
@@ -356,9 +351,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 						afterPrototypeCreation(beanName);
 					}
 					bean = getObjectForBeanInstance(prototypeInstance, name, beanName, mbd);
-				}
-
-				else {
+				}else {
 					String scopeName = mbd.getScope();
 					if (!StringUtils.hasLength(scopeName)) {
 						throw new IllegalStateException("No scope name defined for bean ´" + beanName + "'");
@@ -384,8 +377,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					}
 				}
 				beanCreation.end();
-			}
-			catch (BeansException ex) {
+			}catch (BeansException ex) {
 				cleanupAfterBeanCreationFailure(beanName);
 				throw ex;
 			}
