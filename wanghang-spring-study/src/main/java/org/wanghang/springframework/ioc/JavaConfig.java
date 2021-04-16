@@ -1,4 +1,4 @@
-package org.wanghang.springframework;
+package org.wanghang.springframework.ioc;
 
 
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package org.wanghang.springframework.aware;
+package org.wanghang.springframework.ioc.aware;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

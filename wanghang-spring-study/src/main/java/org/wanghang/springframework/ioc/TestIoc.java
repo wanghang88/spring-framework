@@ -1,4 +1,4 @@
-package org.wanghang.springframework;
+package org.wanghang.springframework.ioc;
 
 
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.StopWatch;
-import org.wanghang.springframework.manualioc.Student;
+import org.wanghang.springframework.ioc.manualioc.Student;
 
 
 /**

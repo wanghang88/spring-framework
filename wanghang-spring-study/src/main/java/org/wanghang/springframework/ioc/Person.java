@@ -1,4 +1,4 @@
-package org.wanghang.springframework;
+package org.wanghang.springframework.ioc;
 
 public class Person {
 

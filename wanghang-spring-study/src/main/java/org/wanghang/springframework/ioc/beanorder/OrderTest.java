@@ -1,4 +1,4 @@
-package org.wanghang.springframework.beanorder;
+package org.wanghang.springframework.ioc.beanorder;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

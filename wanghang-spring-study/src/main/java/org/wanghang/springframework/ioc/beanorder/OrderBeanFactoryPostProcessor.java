@@ -1,4 +1,4 @@
-package org.wanghang.springframework.beanorder;
+package org.wanghang.springframework.ioc.beanorder;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;

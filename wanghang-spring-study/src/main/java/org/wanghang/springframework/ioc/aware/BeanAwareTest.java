@@ -1,7 +1,7 @@
-package org.wanghang.springframework.aware;
+package org.wanghang.springframework.ioc.aware;
 
 
-import org.wanghang.springframework.beanorder.Order;
+import org.wanghang.springframework.ioc.beanorder.Order;
 
 
 /**

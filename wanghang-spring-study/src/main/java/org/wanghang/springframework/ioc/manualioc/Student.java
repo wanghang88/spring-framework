@@ -1,4 +1,4 @@
-package org.wanghang.springframework.manualioc;
+package org.wanghang.springframework.ioc.manualioc;
 
 public class Student {
 

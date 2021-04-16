@@ -3,14 +3,14 @@
 	   xmlns="http://www.springframework.org/schema/beans"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byName">
 
-	<bean id="person" class="org.wanghang.springframework.Person"/>
+	<bean id="person" class="org.wanghang.springframework.ioc.Person"/>
 
 
-	<bean id="order" class="org.wanghang.springframework.beanorder.Order">
+	<bean id="order" class="org.wanghang.springframework.ioc.beanorder.Order">
 		<property name="orderId" value="100"/>
 		<property name="orderName" value="wanghangOrder100"/>
 	</bean>
 
-	<bean id="orderBeanFactoryPostProcessor" class="org.wanghang.springframework.beanorder.OrderBeanFactoryPostProcessor"/>
-	<bean id="orderBeanPostProcessor" class="org.wanghang.springframework.beanorder.OrderBeanPostProcessor"/>
+	<bean id="orderBeanFactoryPostProcessor" class="org.wanghang.springframework.ioc.beanorder.OrderBeanFactoryPostProcessor"/>
+	<bean id="orderBeanPostProcessor" class="org.wanghang.springframework.ioc.beanorder.OrderBeanPostProcessor"/>
 </beans>
