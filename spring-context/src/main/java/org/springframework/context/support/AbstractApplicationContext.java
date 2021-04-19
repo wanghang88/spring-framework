@@ -554,7 +554,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			// 1：准备工作，记录下容器的启动时间、标记“已启动”状态、处理配置文件中的占位符
 			prepareRefresh();
 
-			//Todo :这一个方法是重要的(初始化容器的过程)
+			//Todo :这一个方法是重要的(初始化容器的过程,可以参考这篇博文:https://blog.csdn.net/thewindkee/article/details/104048691)
 			//2:这步比较关键，配置文件就会解析成一个个 Bean 定义，注册到BeanFactory,这里的注册是bean的信息保存在容器中(核心：将bean变成转成beanName(key)-> beanDefinition(value) 的 map中)
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
@@ -931,6 +931,8 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		// Initialize LoadTimeWeaverAware beans early to allow for registering their transformers early.
 		String[] weaverAwareNames = beanFactory.getBeanNamesForType(LoadTimeWeaverAware.class, false, false);
 		for (String weaverAwareName : weaverAwareNames) {
+
+			// 执行getBean()方法的流程,可以参考 bugstack虫洞栈博文:https://mp.weixin.qq.com/s/W_451wYl8mWp6jZpD9YV0g
 			getBean(weaverAwareName);
 		}
 
@@ -1176,6 +1178,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	@Override
 	public Object getBean(String name) throws BeansException {
 		assertBeanFactoryActive();
+		//AbstractBeanFactory#getBean()方法里的doGetBean();
 		return getBeanFactory().getBean(name);
 	}
 

@@ -104,6 +104,7 @@ public class TestIoc {
 
 
     //2:已xml的方式启动Spring的容器:
+	// 参考博文:https://javadoop.com/post/spring-ioc, 这里面(一个是创建 Bean 容器，一个是初始化 Bean);
 	private void classPathXml() {
 		// 用我们的配置文件来启动一个 ApplicationContext
 		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
