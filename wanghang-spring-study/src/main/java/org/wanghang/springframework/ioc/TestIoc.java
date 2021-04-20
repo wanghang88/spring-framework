@@ -85,11 +85,11 @@ public class TestIoc {
 
 	//	ioc.annotationConfigIOc();
 
-	//	ioc.classPathXml();
+		ioc.classPathXml();
 
 	//	ioc.userLoadToSpringIoc();
 
-		ioc.testStopWatch();
+	//	ioc.testStopWatch();
 	}
 
 
