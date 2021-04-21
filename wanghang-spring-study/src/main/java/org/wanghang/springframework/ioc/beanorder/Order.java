@@ -1,13 +1,16 @@
 package org.wanghang.springframework.ioc.beanorder;
 
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 
 /**
- * Order实现InitializingBean接口在，Order初始化之后，执行初始化的方法
+ * Order实现InitializingBean接口在，Order初始化之后，执行初始化的方法;
+ * Order实现DisposableBean接口后，在BeanFactory销毁的时候调用,总定义bean的销毁逻辑;
+ *
  */
-public class Order implements InitializingBean {
+public class Order implements InitializingBean, DisposableBean {
 
 	private Integer orderId;
 	private String orderName;
@@ -51,5 +54,11 @@ public class Order implements InitializingBean {
 				"orderId=" + orderId +
 				", orderName='" + orderName + '\'' +
 				'}';
+	}
+
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("spring容器销毁了,实现DisposableBean的bean执行自定义的destroy()方法");
 	}
 }

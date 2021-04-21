@@ -36,11 +36,7 @@ import org.wanghang.springframework.ioc.manualioc.Student;
  * BeanPostProcessor:可以在spring容器实例化bean之后,在执行bean的初始化方法前,执行postProcessBeforeInitialization();然后再执行初始化的方法;初始化的方法执行完成之后再执行postProcessAfterInitialization()方法,
  *                   并且在配置之后，所有的bean都会有这个功能;
  *
- *
- *
- *
- *
- *
+ *DisposableBean接口：实现DisposableBean的bean将在BeanFactory销毁的时候调用,定义bean销毁逻辑
  *
  *
  *
