@@ -96,7 +96,7 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 		//初始化 BeanDefinitionReader，其实这个是提供给子类覆写的，
 		initBeanDefinitionReader(beanDefinitionReader);
 
-		//TODO：重点方法
+		//TODO：重点方法(解析bean)
 		loadBeanDefinitions(beanDefinitionReader);
 	}
 

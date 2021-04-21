@@ -157,7 +157,7 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 		}
 
 		preProcessXml(root);
-		//TODO：重点将xml里的bean转成BeanDefinition
+		//TODO：重点将xml里的bean转成BeanDefinition(DefaultBeanDefinitionDocumentReader#parseDefaultElement())
 		parseBeanDefinitions(root, this.delegate);
 		postProcessXml(root);
 		this.delegate = parent;
