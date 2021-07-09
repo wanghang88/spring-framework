@@ -1,4 +1,7 @@
-
-
 1：基于Spring bean的生命周期的拓展点，以及手动注册bean到Spring容器中的博文总结
 https://www.jianshu.com/p/8a4a519e2f13
+
+
+
+2:spring cloud技术的中文文档，可以看到Spring cloud的各个模块(比如：Spring cloud zookeeper等)
+https://www.springcloud.cc/
