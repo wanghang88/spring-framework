@@ -1,26 +1,40 @@
-1：基于Spring bean的生命周期的拓展点，以及手动注册bean到Spring容器中的博文总结
+1：关于spring
+a)基于Spring bean的生命周期的拓展点，以及手动注册bean到Spring容器中的博文总结
 https://www.jianshu.com/p/8a4a519e2f13
+b)spring的总结(包括ioc, aop以及事务,以及生命周期等)
+https://www.processon.com/view/60af9d23f346fb715d55f736?fromnew=1#outline
 
 
-
-2:spring cloud技术的中文文档，可以看到Spring cloud的各个模块(比如：Spring cloud zookeeper以及设计安全的spring security,zuul,Consul等)
-https://www.springcloud.cc/
-
-
-
-3:关于spring cloud维服务介绍相关的数，以及使用docker构建微服务的介绍
+2:关于spring cloud维服务介绍相关的数，以及使用docker构建微服务的介绍(维服务与docker以及k8s关联的项目)
 https://github.com/wanghang88/spring-cloud-book
 
 
-
-4：Spring cloud
+3：Spring cloud相关练手的项目:
 维服务练手项目:
 https://github.com/wanghang88/spring-cloud-code
+道天地科技,关于使用相关的技术都有实现
+https://gitee.com/matevip/matecloud
+猿天地公众号:
+https://github.com/yinjihuan/kitty
 
 
 
-
-
-5:官网:
-spring Cloud的官网
+4:官网:
+a)spring Cloud的官网
 https://spring.io/projects/spring-cloud
+b)spring cloud技术的中文文档，可以看到Spring cloud的各个模块(比如：Spring cloud zookeeper以及设计安全的spring security,zuul,Consul等)
+https://www.springcloud.cc/
+c)spring cloud中国社区的官方gitHub
+https://github.com/SpringCloud
+d)spring Cloud技术的线下分享(以PPT的形式对Spring的一些技术进行分享的组件和c是一起的)
+https://github.com/SpringCloud/spring-cloud-document
+
+
+
+5:博客
+关于使用SpringBoot,Spring,以及Spring Cloud一些比较好的博客
+https://xujin.org/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/
+
+
+
+
