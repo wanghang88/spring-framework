@@ -27,10 +27,19 @@ package org.wanghang.springframework.aop;
  目标对象（Target Object):包含连接点的对象。也被称作被通知或被代理对象。
 
 
- 2)Spring aop的实现原理:
+ 2)Spring aop的实现原理(主要用于实现事务、缓存、安全等功能):
    https://blog.csdn.net/qq_26323323/article/details/81012855  (流程原理分析)
   a)如何生成代理对象？
   b)切面如何植入？
+  先介绍一些Spring Aop中一些核心类，大致分为三类:
+  advisorCreator:继承 spring ioc的扩展接口 beanPostProcessor，主要用来扫描获取 advisor,
+  advisor:切点和通知,
+  advice:通知，也就是aop中增强的方法
+
+ https://blog.csdn.net/forezp/article/details/84927180
+ https://zhuanlan.zhihu.com/p/82463291  (介绍aop的入口)
+ (这一篇子有入口并带源码的分析)
+ http://www.tianxiaobo.com/2018/06/20/Spring-AOP-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E7%AD%9B%E9%80%89%E5%90%88%E9%80%82%E7%9A%84%E9%80%9A%E7%9F%A5%E5%99%A8/
 
 
 
