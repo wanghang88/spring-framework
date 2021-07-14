@@ -11,9 +11,7 @@ package org.wanghang.springframework.aop;
     切点(PointCut)：切面要增强的地方，一般是包的模糊匹配或者注解,
     方法增强(Advice):对方法功能的增强。
 
- 连接点(JoinPoint)：程序执行过程中明确的点，连接点由两个信息确定，
-                   方法:表示程序执行点
-                   相对点:表示方位,即目标方法的什么位置，比如调用前，后等。
+ 连接点(JoinPoint)：连接点是指程序执行过程中的一些点，比如方法调用，异常处理等，在 Spring AOP 中，仅支持方法级别的连接点。
 
  切入点(PointCut):对连接点进行拦截的条件定义(对方法的标注),
 
@@ -28,9 +26,13 @@ package org.wanghang.springframework.aop;
 
 
  2)Spring aop的实现原理(主要用于实现事务、缓存、安全等功能):
-   https://blog.csdn.net/qq_26323323/article/details/81012855  (流程原理分析)
+   AOP 的原理,无非是通过代理模式为目标对象生产代理对象，并将横切逻辑插入到目标方法执行的前后。
   a)如何生成代理对象？
   b)切面如何植入？
+      这个方式就是通过实现后置处理器 BeanPostProcessor 接口。该接口是 Spring 提供的一个拓展接口，通过实现该接口，用户可在 bean 初始化前后做一些自定义操作,
+    那Spring是在何时进行织入操作的呢？答案是在 bean 初始化完成后，即 bean 执行完初始化方法（init-method),
+    Spring通过切点对 bean 类中的方法进行匹配。若匹配成功，
+    则会为该 bean 生成代理对象，并将代理对象返回给容器。容器向后置处理器输入bean对象，得到bean对象的代理，这样就完成了织入过程。
   先介绍一些Spring Aop中一些核心类，大致分为三类:
   advisorCreator:继承 spring ioc的扩展接口 beanPostProcessor，主要用来扫描获取 advisor,
   advisor:切点和通知,
@@ -38,11 +40,14 @@ package org.wanghang.springframework.aop;
 
  https://blog.csdn.net/forezp/article/details/84927180
  https://zhuanlan.zhihu.com/p/82463291  (介绍aop的入口)
- (这一篇子有入口并带源码的分析)
+ (田小波这一篇子有入口并带源码的分析)
  http://www.tianxiaobo.com/2018/06/20/Spring-AOP-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E7%AD%9B%E9%80%89%E5%90%88%E9%80%82%E7%9A%84%E9%80%9A%E7%9F%A5%E5%99%A8/
 
  （田小波：整个介绍SpringIoc ,Spring Aop以及Spring MVC的文章）
  http://www.tianxiaobo.com/categories/java-framework/spring/
+
+ (Aop的流程源码分析)
+ https://blog.csdn.net/qq_26323323/article/details/81012855
 
 
 
